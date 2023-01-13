@@ -6,3 +6,5 @@ export 'package:get_it/get_it.dart';
 export 'package:injectable/injectable.dart';
 export 'package:freezed_annotation/freezed_annotation.dart';
 export 'package:json_annotation/json_annotation.dart';
+export 'package:dio/dio.dart';
+export 'package:pretty_dio_logger/pretty_dio_logger.dart';
