@@ -14,8 +14,8 @@ dependencies:
 
   cupertino_icons: ^1.0.2
 
-  common:
-    path: ../common
+  shared_dependencies:
+    path: ../shared_dependencies
 
 dev_dependencies:
   flutter_test:

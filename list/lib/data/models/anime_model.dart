@@ -1,4 +1,6 @@
-import 'package:common/common.dart';
+
+
+import 'package:shared_dependencies/shared_dependencies.dart';
 
 part 'anime_model.g.dart';
 

@@ -1,5 +1,5 @@
-import 'package:common/common.dart';
 import 'package:list/data/models/anime_model.dart';
+import 'package:shared_dependencies/shared_dependencies.dart';
 
 @injectable
 class AnimeListRemoteDataSource {

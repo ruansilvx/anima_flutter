@@ -1,5 +1,6 @@
-import 'package:common/common.dart';
+
 import 'package:flutter/foundation.dart';
+import 'package:shared_dependencies/shared_dependencies.dart';
 
 part 'anime.freezed.dart';
 

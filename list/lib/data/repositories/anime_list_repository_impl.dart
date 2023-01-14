@@ -1,9 +1,10 @@
-import 'package:common/common.dart';
+
 import 'package:list/data/datasources/anime_list_remote_data_source.dart';
 import 'package:list/data/mappers/anime_list_data_mappers.dart';
 import 'package:list/domain/entities/anime.dart';
 import 'package:list/domain/exceptions/exceptions.dart';
 import 'package:list/domain/repositories/anime_list_repository.dart';
+import 'package:shared_dependencies/shared_dependencies.dart';
 
 @Injectable(as: AnimeListRepository)
 class AnimeListRepositoryImpl implements AnimeListRepository {

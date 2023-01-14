@@ -1,4 +1,4 @@
-name: common
+name: shared_dependencies
 description: A new Flutter project.
 
 publish_to: 'none'

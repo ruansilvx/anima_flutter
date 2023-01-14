@@ -1,6 +1,6 @@
-import 'package:common/common.dart';
 import 'package:list/domain/entities/anime.dart';
 import 'package:list/domain/repositories/anime_list_repository.dart';
+import 'package:shared_dependencies/shared_dependencies.dart';
 
 @injectable
 class GetAnimeListUseCase {

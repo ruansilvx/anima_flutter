@@ -1,4 +1,4 @@
-library common;
+library shared_dependencies;
 
 export 'package:provider/provider.dart';
 export 'package:flutter_bloc/flutter_bloc.dart';
