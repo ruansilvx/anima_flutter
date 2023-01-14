@@ -1,0 +1,1 @@
+class ListFetchFailedException implements Exception {}

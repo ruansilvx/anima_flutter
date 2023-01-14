@@ -4,12 +4,12 @@ import 'package:list/domain/repositories/anime_list_repository.dart';
 
 @injectable
 class GetAnimeListUseCase {
-  final AnimeListRepository animeListRepository;
+  final AnimeListRepository _animeListRepository;
 
-  GetAnimeListUseCase(this.animeListRepository);
+  GetAnimeListUseCase(this._animeListRepository);
 
   Future<List<Anime>> call({int? page, int? limit, String? searchQuery}) {
-    return animeListRepository.getAnimeList(
+    return _animeListRepository.getAnimeList(
       page: page,
       limit: limit,
       searchQuery: searchQuery,
