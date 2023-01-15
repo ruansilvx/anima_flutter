@@ -10,3 +10,4 @@ export 'package:json_annotation/json_annotation.dart';
 export 'package:dio/dio.dart';
 export 'package:pretty_dio_logger/pretty_dio_logger.dart';
 export 'package:mocktail/mocktail.dart';
+export 'package:bloc_test/bloc_test.dart';
