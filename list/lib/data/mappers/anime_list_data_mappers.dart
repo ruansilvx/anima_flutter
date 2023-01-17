@@ -5,7 +5,7 @@ extension RemoteToDomainMappers on AnimeModel {
   Anime toDomain() => Anime(
         id: id,
         title: title,
-        type: AnimeType.values.byName(type),
+        type: AnimeType.values.byName(type.toLowerCase()),
         thumbnail: thumbnail,
       );
 }

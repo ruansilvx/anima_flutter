@@ -15,12 +15,18 @@ class AnimeListBloc extends Bloc<AnimeListEvent, AnimeListState> {
   void _onFetchPage(FetchPage event, Emitter<AnimeListState> emit) async {
     try {
       final animeList = await _getAnimeListUseCase(
-        page: state.page,
+        page: event.page,
         limit: state.limit,
         searchQuery: state.searchQuery,
       );
 
-      emit(state.copyWith(list: state.list + animeList, page: event.page));
+      emit(
+        state.copyWith(
+          list: state.list + animeList,
+          nextPage: event.page + 1,
+          error: false,
+        ),
+      );
     } catch (_) {
       emit(state.copyWith(error: true));
     }

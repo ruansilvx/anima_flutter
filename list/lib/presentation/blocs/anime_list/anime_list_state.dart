@@ -9,7 +9,7 @@ class AnimeListState with _$AnimeListState {
     @Default([]) List<Anime> list,
     @Default(AnimeListFormat.list) AnimeListFormat listFormat,
     @Default(false) bool error,
-    int? page,
+    int? nextPage,
     int? limit,
     String? searchQuery,
   }) = _AnimeListState;

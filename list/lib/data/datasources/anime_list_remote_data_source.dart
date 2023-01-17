@@ -15,14 +15,16 @@ class AnimeListRemoteDataSource {
     final response = await _dio.get(
       '/anime',
       queryParameters: {
-        'post': page,
-        'limit': limit,
-        'searchQuery': searchQuery,
+        if (page != null) 'page': page,
+        if (limit != null) 'limit': limit,
+        if (searchQuery != null) 'searchQuery': searchQuery,
       },
     );
-    final list = (response as List).map((json) {
-      final id = json.keys.first;
-      return AnimeModel.fromJson(json.add({'id': id}));
+    final list = (response.data as List).map((jsonList) {
+      final id = jsonList[0];
+      return AnimeModel.fromJson(
+        Map.from(jsonList[1])..addAll({'id': id}),
+      );
     }).toList();
     return list;
   }

@@ -43,7 +43,7 @@ void main() {
     },
     seed: () {
       return const AnimeListState(
-        page: 1,
+        nextPage: 1,
         list: [anime1],
       );
     },
@@ -52,7 +52,7 @@ void main() {
     },
     expect: () => [
       const AnimeListState(
-        page: 2,
+        nextPage: 3,
         list: [anime1, anime2],
       ),
     ],
@@ -70,7 +70,7 @@ void main() {
     },
     seed: () {
       return const AnimeListState(
-        page: 1,
+        nextPage: 1,
         list: [anime1],
       );
     },
@@ -78,7 +78,7 @@ void main() {
       bloc.add(FetchPage(page: 2));
     },
     expect: () => [
-      const AnimeListState(page: 1, list: [anime1], error: true),
+      const AnimeListState(nextPage: 1, list: [anime1], error: true),
     ],
   );
 

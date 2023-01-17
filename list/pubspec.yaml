@@ -16,6 +16,7 @@ dependencies:
 
   shared_dependencies:
     path: ../shared_dependencies
+  infinite_scroll_pagination: ^3.2.0
 
 dev_dependencies:
   flutter_test:
