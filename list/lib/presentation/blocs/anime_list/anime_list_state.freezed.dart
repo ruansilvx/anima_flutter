@@ -19,8 +19,8 @@ mixin _$AnimeListState {
   List<Anime> get list => throw _privateConstructorUsedError;
   AnimeListFormat get listFormat => throw _privateConstructorUsedError;
   bool get error => throw _privateConstructorUsedError;
+  int get limit => throw _privateConstructorUsedError;
   int? get nextPage => throw _privateConstructorUsedError;
-  int? get limit => throw _privateConstructorUsedError;
   String? get searchQuery => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
@@ -38,8 +38,8 @@ abstract class $AnimeListStateCopyWith<$Res> {
       {List<Anime> list,
       AnimeListFormat listFormat,
       bool error,
+      int limit,
       int? nextPage,
-      int? limit,
       String? searchQuery});
 }
 
@@ -59,8 +59,8 @@ class _$AnimeListStateCopyWithImpl<$Res, $Val extends AnimeListState>
     Object? list = null,
     Object? listFormat = null,
     Object? error = null,
+    Object? limit = null,
     Object? nextPage = freezed,
-    Object? limit = freezed,
     Object? searchQuery = freezed,
   }) {
     return _then(_value.copyWith(
@@ -76,13 +76,13 @@ class _$AnimeListStateCopyWithImpl<$Res, $Val extends AnimeListState>
           ? _value.error
           : error // ignore: cast_nullable_to_non_nullable
               as bool,
+      limit: null == limit
+          ? _value.limit
+          : limit // ignore: cast_nullable_to_non_nullable
+              as int,
       nextPage: freezed == nextPage
           ? _value.nextPage
           : nextPage // ignore: cast_nullable_to_non_nullable
-              as int?,
-      limit: freezed == limit
-          ? _value.limit
-          : limit // ignore: cast_nullable_to_non_nullable
               as int?,
       searchQuery: freezed == searchQuery
           ? _value.searchQuery
@@ -104,8 +104,8 @@ abstract class _$$_AnimeListStateCopyWith<$Res>
       {List<Anime> list,
       AnimeListFormat listFormat,
       bool error,
+      int limit,
       int? nextPage,
-      int? limit,
       String? searchQuery});
 }
 
@@ -123,8 +123,8 @@ class __$$_AnimeListStateCopyWithImpl<$Res>
     Object? list = null,
     Object? listFormat = null,
     Object? error = null,
+    Object? limit = null,
     Object? nextPage = freezed,
-    Object? limit = freezed,
     Object? searchQuery = freezed,
   }) {
     return _then(_$_AnimeListState(
@@ -140,13 +140,13 @@ class __$$_AnimeListStateCopyWithImpl<$Res>
           ? _value.error
           : error // ignore: cast_nullable_to_non_nullable
               as bool,
+      limit: null == limit
+          ? _value.limit
+          : limit // ignore: cast_nullable_to_non_nullable
+              as int,
       nextPage: freezed == nextPage
           ? _value.nextPage
           : nextPage // ignore: cast_nullable_to_non_nullable
-              as int?,
-      limit: freezed == limit
-          ? _value.limit
-          : limit // ignore: cast_nullable_to_non_nullable
               as int?,
       searchQuery: freezed == searchQuery
           ? _value.searchQuery
@@ -163,8 +163,8 @@ class _$_AnimeListState implements _AnimeListState {
       {final List<Anime> list = const [],
       this.listFormat = AnimeListFormat.list,
       this.error = false,
+      this.limit = 10,
       this.nextPage,
-      this.limit,
       this.searchQuery})
       : _list = list;
 
@@ -183,15 +183,16 @@ class _$_AnimeListState implements _AnimeListState {
   @JsonKey()
   final bool error;
   @override
-  final int? nextPage;
+  @JsonKey()
+  final int limit;
   @override
-  final int? limit;
+  final int? nextPage;
   @override
   final String? searchQuery;
 
   @override
   String toString() {
-    return 'AnimeListState(list: $list, listFormat: $listFormat, error: $error, nextPage: $nextPage, limit: $limit, searchQuery: $searchQuery)';
+    return 'AnimeListState(list: $list, listFormat: $listFormat, error: $error, limit: $limit, nextPage: $nextPage, searchQuery: $searchQuery)';
   }
 
   @override
@@ -203,9 +204,9 @@ class _$_AnimeListState implements _AnimeListState {
             (identical(other.listFormat, listFormat) ||
                 other.listFormat == listFormat) &&
             (identical(other.error, error) || other.error == error) &&
+            (identical(other.limit, limit) || other.limit == limit) &&
             (identical(other.nextPage, nextPage) ||
                 other.nextPage == nextPage) &&
-            (identical(other.limit, limit) || other.limit == limit) &&
             (identical(other.searchQuery, searchQuery) ||
                 other.searchQuery == searchQuery));
   }
@@ -216,8 +217,8 @@ class _$_AnimeListState implements _AnimeListState {
       const DeepCollectionEquality().hash(_list),
       listFormat,
       error,
-      nextPage,
       limit,
+      nextPage,
       searchQuery);
 
   @JsonKey(ignore: true)
@@ -232,8 +233,8 @@ abstract class _AnimeListState implements AnimeListState {
       {final List<Anime> list,
       final AnimeListFormat listFormat,
       final bool error,
+      final int limit,
       final int? nextPage,
-      final int? limit,
       final String? searchQuery}) = _$_AnimeListState;
 
   @override
@@ -243,9 +244,9 @@ abstract class _AnimeListState implements AnimeListState {
   @override
   bool get error;
   @override
-  int? get nextPage;
+  int get limit;
   @override
-  int? get limit;
+  int? get nextPage;
   @override
   String? get searchQuery;
   @override

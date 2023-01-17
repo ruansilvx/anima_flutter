@@ -26,6 +26,13 @@ void main() {
     thumbnail: 'thumbnail2',
   );
 
+  const anime3 = Anime(
+    id: 'id3',
+    title: 'title3',
+    type: AnimeType.unknown,
+    thumbnail: 'thumbnail3',
+  );
+
   setUp(() {
     getAnimeListUseCase = MockGetAnimeListUseCase();
     animeListBloc = AnimeListBloc(getAnimeListUseCase);
@@ -79,6 +86,36 @@ void main() {
     },
     expect: () => [
       const AnimeListState(nextPage: 1, list: [anime1], error: true),
+    ],
+  );
+
+  blocTest(
+    'Reached last page',
+    build: () {
+      when(
+        () => getAnimeListUseCase(
+          page: any(named: 'page'),
+          limit: any(named: 'limit'),
+        ),
+      ).thenAnswer((_) async => [anime3]);
+      return animeListBloc;
+    },
+    seed: () {
+      return const AnimeListState(
+        nextPage: 1,
+        list: [anime1, anime2],
+        limit: 2,
+      );
+    },
+    act: (bloc) {
+      bloc.add(FetchPage(page: 2));
+    },
+    expect: () => [
+      const AnimeListState(
+        nextPage: null,
+        list: [anime1, anime2, anime3],
+        limit: 2,
+      ),
     ],
   );
 

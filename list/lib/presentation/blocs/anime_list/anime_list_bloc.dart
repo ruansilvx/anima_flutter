@@ -23,7 +23,7 @@ class AnimeListBloc extends Bloc<AnimeListEvent, AnimeListState> {
       emit(
         state.copyWith(
           list: state.list + animeList,
-          nextPage: event.page + 1,
+          nextPage: animeList.length < state.limit ? null : event.page + 1,
           error: false,
         ),
       );
