@@ -16,7 +16,7 @@ final _privateConstructorUsedError = UnsupportedError(
 
 /// @nodoc
 mixin _$AnimeListState {
-  List<Anime> get list => throw _privateConstructorUsedError;
+  List<Anime>? get list => throw _privateConstructorUsedError;
   AnimeListFormat get listFormat => throw _privateConstructorUsedError;
   bool get error => throw _privateConstructorUsedError;
   int get limit => throw _privateConstructorUsedError;
@@ -35,7 +35,7 @@ abstract class $AnimeListStateCopyWith<$Res> {
       _$AnimeListStateCopyWithImpl<$Res, AnimeListState>;
   @useResult
   $Res call(
-      {List<Anime> list,
+      {List<Anime>? list,
       AnimeListFormat listFormat,
       bool error,
       int limit,
@@ -56,7 +56,7 @@ class _$AnimeListStateCopyWithImpl<$Res, $Val extends AnimeListState>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? list = null,
+    Object? list = freezed,
     Object? listFormat = null,
     Object? error = null,
     Object? limit = null,
@@ -64,10 +64,10 @@ class _$AnimeListStateCopyWithImpl<$Res, $Val extends AnimeListState>
     Object? searchQuery = freezed,
   }) {
     return _then(_value.copyWith(
-      list: null == list
+      list: freezed == list
           ? _value.list
           : list // ignore: cast_nullable_to_non_nullable
-              as List<Anime>,
+              as List<Anime>?,
       listFormat: null == listFormat
           ? _value.listFormat
           : listFormat // ignore: cast_nullable_to_non_nullable
@@ -101,7 +101,7 @@ abstract class _$$_AnimeListStateCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {List<Anime> list,
+      {List<Anime>? list,
       AnimeListFormat listFormat,
       bool error,
       int limit,
@@ -120,7 +120,7 @@ class __$$_AnimeListStateCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? list = null,
+    Object? list = freezed,
     Object? listFormat = null,
     Object? error = null,
     Object? limit = null,
@@ -128,10 +128,10 @@ class __$$_AnimeListStateCopyWithImpl<$Res>
     Object? searchQuery = freezed,
   }) {
     return _then(_$_AnimeListState(
-      list: null == list
+      list: freezed == list
           ? _value._list
           : list // ignore: cast_nullable_to_non_nullable
-              as List<Anime>,
+              as List<Anime>?,
       listFormat: null == listFormat
           ? _value.listFormat
           : listFormat // ignore: cast_nullable_to_non_nullable
@@ -160,7 +160,7 @@ class __$$_AnimeListStateCopyWithImpl<$Res>
 
 class _$_AnimeListState implements _AnimeListState {
   const _$_AnimeListState(
-      {final List<Anime> list = const [],
+      {final List<Anime>? list = null,
       this.listFormat = AnimeListFormat.list,
       this.error = false,
       this.limit = 10,
@@ -168,12 +168,14 @@ class _$_AnimeListState implements _AnimeListState {
       this.searchQuery})
       : _list = list;
 
-  final List<Anime> _list;
+  final List<Anime>? _list;
   @override
   @JsonKey()
-  List<Anime> get list {
+  List<Anime>? get list {
+    final value = _list;
+    if (value == null) return null;
     // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(_list);
+    return EqualUnmodifiableListView(value);
   }
 
   @override
@@ -230,7 +232,7 @@ class _$_AnimeListState implements _AnimeListState {
 
 abstract class _AnimeListState implements AnimeListState {
   const factory _AnimeListState(
-      {final List<Anime> list,
+      {final List<Anime>? list,
       final AnimeListFormat listFormat,
       final bool error,
       final int limit,
@@ -238,7 +240,7 @@ abstract class _AnimeListState implements AnimeListState {
       final String? searchQuery}) = _$_AnimeListState;
 
   @override
-  List<Anime> get list;
+  List<Anime>? get list;
   @override
   AnimeListFormat get listFormat;
   @override

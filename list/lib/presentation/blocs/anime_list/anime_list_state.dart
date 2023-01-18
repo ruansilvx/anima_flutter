@@ -6,7 +6,7 @@ part 'anime_list_state.freezed.dart';
 @freezed
 class AnimeListState with _$AnimeListState {
   const factory AnimeListState({
-    @Default([]) List<Anime> list,
+    @Default(null) List<Anime>? list,
     @Default(AnimeListFormat.list) AnimeListFormat listFormat,
     @Default(false) bool error,
     @Default(10) int limit,

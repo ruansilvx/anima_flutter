@@ -31,11 +31,15 @@ class _AnimeListState extends State<AnimeList> {
 
     _animeListBlocStateSubscription =
         context.read<AnimeListBloc>().stream.listen((state) {
-      _pagingController.value = PagingState(
-        nextPageKey: state.nextPage,
-        itemList: state.list,
-        error: state.error ? true : null,
-      );
+      if (state.list == null && state.nextPage == null) {
+        _pagingController.refresh();
+      } else {
+        _pagingController.value = PagingState(
+          nextPageKey: state.nextPage,
+          itemList: state.list,
+          error: state.error ? true : null,
+        );
+      }
     });
     super.initState();
   }

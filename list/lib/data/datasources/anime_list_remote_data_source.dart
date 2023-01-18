@@ -12,6 +12,8 @@ class AnimeListRemoteDataSource {
     int? limit,
     String? searchQuery,
   }) async {
+    // Delay added so loadings can be observed
+    await Future.delayed(const Duration(seconds: 1));
     final response = await _dio.get(
       '/anime',
       queryParameters: {

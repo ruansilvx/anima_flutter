@@ -9,7 +9,13 @@ class AnimeListBloc extends Bloc<AnimeListEvent, AnimeListState> {
 
   AnimeListBloc(this._getAnimeListUseCase) : super(const AnimeListState()) {
     on<FetchPage>(_onFetchPage);
-    on<Search>(_onSearch);
+
+    on<Search>(
+      _onSearch,
+      transformer: debounce(
+        const Duration(milliseconds: 300),
+      ),
+    );
   }
 
   void _onFetchPage(FetchPage event, Emitter<AnimeListState> emit) async {
@@ -22,7 +28,7 @@ class AnimeListBloc extends Bloc<AnimeListEvent, AnimeListState> {
 
       emit(
         state.copyWith(
-          list: state.list + animeList,
+          list: (state.list ?? []) + animeList,
           nextPage: animeList.length < state.limit ? null : event.page + 1,
           error: false,
         ),
@@ -33,6 +39,16 @@ class AnimeListBloc extends Bloc<AnimeListEvent, AnimeListState> {
   }
 
   void _onSearch(Search event, Emitter<AnimeListState> emit) {
-    emit(state.copyWith(searchQuery: event.searchQuery, list: []));
+    emit(
+      state.copyWith(
+        searchQuery: event.searchQuery,
+        list: null,
+        nextPage: null,
+      ),
+    );
   }
+}
+
+EventTransformer<AnimeListEvent> debounce<AnimeListEvent>(Duration duration) {
+  return (events, mapper) => events.debounce(duration).switchMap(mapper);
 }
