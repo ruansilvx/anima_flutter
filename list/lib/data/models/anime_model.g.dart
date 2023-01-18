@@ -10,7 +10,9 @@ AnimeModel _$AnimeModelFromJson(Map<String, dynamic> json) => AnimeModel(
       id: json['id'] as String,
       title: json['title'] as String,
       type: json['type'] as String,
-      thumbnail: json['thumbnail'] as String,
+      picture: json['picture'] as String,
+      animeSeason: AnimeSeasonModel.fromJson(
+          json['animeSeason'] as Map<String, dynamic>),
     );
 
 Map<String, dynamic> _$AnimeModelToJson(AnimeModel instance) =>
@@ -18,5 +20,6 @@ Map<String, dynamic> _$AnimeModelToJson(AnimeModel instance) =>
       'id': instance.id,
       'title': instance.title,
       'type': instance.type,
-      'thumbnail': instance.thumbnail,
+      'picture': instance.picture,
+      'animeSeason': instance.animeSeason,
     };

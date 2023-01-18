@@ -2,8 +2,10 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:list/data/datasources/anime_list_remote_data_source.dart';
 import 'package:list/data/mappers/anime_list_data_mappers.dart';
 import 'package:list/data/models/anime_model.dart';
+import 'package:list/data/models/anime_season_model.dart';
 import 'package:list/data/repositories/anime_list_repository_impl.dart';
 import 'package:list/domain/entities/anime.dart';
+import 'package:list/domain/entities/anime_season.dart';
 import 'package:list/domain/exceptions/exceptions.dart';
 import 'package:shared_dependencies/shared_dependencies.dart';
 
@@ -23,7 +25,11 @@ void main() {
     id: 'id',
     title: 'title',
     type: AnimeType.unknown.name,
-    thumbnail: 'thumbnail',
+    picture: 'thumbnail',
+    animeSeason: AnimeSeasonModel(
+      year: 2023,
+      season: AnimeSeasonType.undefined.name,
+    ),
   );
 
   test('Successfully get anime list', () async {

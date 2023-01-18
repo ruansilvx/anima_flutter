@@ -6,6 +6,7 @@ import 'package:list/domain/entities/anime.dart';
 import 'package:list/presentation/anime_list_app_bar.dart';
 import 'package:list/presentation/blocs/anime_list/anime_list_bloc.dart';
 import 'package:list/presentation/blocs/anime_list/anime_list_event.dart';
+import 'package:list/presentation/view/list/anime_list_item.dart';
 import 'package:shared_dependencies/shared_dependencies.dart';
 
 class AnimeList extends StatefulWidget {
@@ -48,7 +49,7 @@ class _AnimeListState extends State<AnimeList> {
             pagingController: _pagingController,
             builderDelegate: PagedChildBuilderDelegate(
               itemBuilder: (context, item, index) {
-                return Text(item.title);
+                return AnimeListItem(anime: item);
               },
             ),
           ),

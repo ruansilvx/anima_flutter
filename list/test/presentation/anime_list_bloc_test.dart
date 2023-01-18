@@ -1,5 +1,6 @@
 import 'package:flutter_test/flutter_test.dart';
 import 'package:list/domain/entities/anime.dart';
+import 'package:list/domain/entities/anime_season.dart';
 import 'package:list/domain/usecases/get_anime_list_use_case.dart';
 import 'package:list/presentation/blocs/anime_list/anime_list_bloc.dart';
 import 'package:list/presentation/blocs/anime_list/anime_list_event.dart';
@@ -16,21 +17,24 @@ void main() {
     id: 'id',
     title: 'title',
     type: AnimeType.unknown,
-    thumbnail: 'thumbnail',
+    picture: 'thumbnail',
+    season: AnimeSeason(year: 2023, season: AnimeSeasonType.undefined),
   );
 
   const anime2 = Anime(
     id: 'id2',
     title: 'title2',
     type: AnimeType.unknown,
-    thumbnail: 'thumbnail2',
+    picture: 'thumbnail2',
+    season: AnimeSeason(year: 2023, season: AnimeSeasonType.undefined),
   );
 
   const anime3 = Anime(
     id: 'id3',
     title: 'title3',
     type: AnimeType.unknown,
-    thumbnail: 'thumbnail3',
+    picture: 'thumbnail3',
+    season: AnimeSeason(year: 2023, season: AnimeSeasonType.undefined),
   );
 
   setUp(() {

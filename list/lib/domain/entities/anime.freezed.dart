@@ -19,7 +19,8 @@ mixin _$Anime {
   String get id => throw _privateConstructorUsedError;
   String get title => throw _privateConstructorUsedError;
   AnimeType get type => throw _privateConstructorUsedError;
-  String get thumbnail => throw _privateConstructorUsedError;
+  String get picture => throw _privateConstructorUsedError;
+  AnimeSeason get season => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $AnimeCopyWith<Anime> get copyWith => throw _privateConstructorUsedError;
@@ -30,7 +31,14 @@ abstract class $AnimeCopyWith<$Res> {
   factory $AnimeCopyWith(Anime value, $Res Function(Anime) then) =
       _$AnimeCopyWithImpl<$Res, Anime>;
   @useResult
-  $Res call({String id, String title, AnimeType type, String thumbnail});
+  $Res call(
+      {String id,
+      String title,
+      AnimeType type,
+      String picture,
+      AnimeSeason season});
+
+  $AnimeSeasonCopyWith<$Res> get season;
 }
 
 /// @nodoc
@@ -49,7 +57,8 @@ class _$AnimeCopyWithImpl<$Res, $Val extends Anime>
     Object? id = null,
     Object? title = null,
     Object? type = null,
-    Object? thumbnail = null,
+    Object? picture = null,
+    Object? season = null,
   }) {
     return _then(_value.copyWith(
       id: null == id
@@ -64,11 +73,23 @@ class _$AnimeCopyWithImpl<$Res, $Val extends Anime>
           ? _value.type
           : type // ignore: cast_nullable_to_non_nullable
               as AnimeType,
-      thumbnail: null == thumbnail
-          ? _value.thumbnail
-          : thumbnail // ignore: cast_nullable_to_non_nullable
+      picture: null == picture
+          ? _value.picture
+          : picture // ignore: cast_nullable_to_non_nullable
               as String,
+      season: null == season
+          ? _value.season
+          : season // ignore: cast_nullable_to_non_nullable
+              as AnimeSeason,
     ) as $Val);
+  }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $AnimeSeasonCopyWith<$Res> get season {
+    return $AnimeSeasonCopyWith<$Res>(_value.season, (value) {
+      return _then(_value.copyWith(season: value) as $Val);
+    });
   }
 }
 
@@ -78,7 +99,15 @@ abstract class _$$_AnimeCopyWith<$Res> implements $AnimeCopyWith<$Res> {
       __$$_AnimeCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({String id, String title, AnimeType type, String thumbnail});
+  $Res call(
+      {String id,
+      String title,
+      AnimeType type,
+      String picture,
+      AnimeSeason season});
+
+  @override
+  $AnimeSeasonCopyWith<$Res> get season;
 }
 
 /// @nodoc
@@ -93,7 +122,8 @@ class __$$_AnimeCopyWithImpl<$Res> extends _$AnimeCopyWithImpl<$Res, _$_Anime>
     Object? id = null,
     Object? title = null,
     Object? type = null,
-    Object? thumbnail = null,
+    Object? picture = null,
+    Object? season = null,
   }) {
     return _then(_$_Anime(
       id: null == id
@@ -108,10 +138,14 @@ class __$$_AnimeCopyWithImpl<$Res> extends _$AnimeCopyWithImpl<$Res, _$_Anime>
           ? _value.type
           : type // ignore: cast_nullable_to_non_nullable
               as AnimeType,
-      thumbnail: null == thumbnail
-          ? _value.thumbnail
-          : thumbnail // ignore: cast_nullable_to_non_nullable
+      picture: null == picture
+          ? _value.picture
+          : picture // ignore: cast_nullable_to_non_nullable
               as String,
+      season: null == season
+          ? _value.season
+          : season // ignore: cast_nullable_to_non_nullable
+              as AnimeSeason,
     ));
   }
 }
@@ -123,7 +157,8 @@ class _$_Anime with DiagnosticableTreeMixin implements _Anime {
       {required this.id,
       required this.title,
       required this.type,
-      required this.thumbnail});
+      required this.picture,
+      required this.season});
 
   @override
   final String id;
@@ -132,11 +167,13 @@ class _$_Anime with DiagnosticableTreeMixin implements _Anime {
   @override
   final AnimeType type;
   @override
-  final String thumbnail;
+  final String picture;
+  @override
+  final AnimeSeason season;
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'Anime(id: $id, title: $title, type: $type, thumbnail: $thumbnail)';
+    return 'Anime(id: $id, title: $title, type: $type, picture: $picture, season: $season)';
   }
 
   @override
@@ -147,7 +184,8 @@ class _$_Anime with DiagnosticableTreeMixin implements _Anime {
       ..add(DiagnosticsProperty('id', id))
       ..add(DiagnosticsProperty('title', title))
       ..add(DiagnosticsProperty('type', type))
-      ..add(DiagnosticsProperty('thumbnail', thumbnail));
+      ..add(DiagnosticsProperty('picture', picture))
+      ..add(DiagnosticsProperty('season', season));
   }
 
   @override
@@ -158,12 +196,13 @@ class _$_Anime with DiagnosticableTreeMixin implements _Anime {
             (identical(other.id, id) || other.id == id) &&
             (identical(other.title, title) || other.title == title) &&
             (identical(other.type, type) || other.type == type) &&
-            (identical(other.thumbnail, thumbnail) ||
-                other.thumbnail == thumbnail));
+            (identical(other.picture, picture) || other.picture == picture) &&
+            (identical(other.season, season) || other.season == season));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, id, title, type, thumbnail);
+  int get hashCode =>
+      Object.hash(runtimeType, id, title, type, picture, season);
 
   @JsonKey(ignore: true)
   @override
@@ -177,7 +216,8 @@ abstract class _Anime implements Anime {
       {required final String id,
       required final String title,
       required final AnimeType type,
-      required final String thumbnail}) = _$_Anime;
+      required final String picture,
+      required final AnimeSeason season}) = _$_Anime;
 
   @override
   String get id;
@@ -186,7 +226,9 @@ abstract class _Anime implements Anime {
   @override
   AnimeType get type;
   @override
-  String get thumbnail;
+  String get picture;
+  @override
+  AnimeSeason get season;
   @override
   @JsonKey(ignore: true)
   _$$_AnimeCopyWith<_$_Anime> get copyWith =>
