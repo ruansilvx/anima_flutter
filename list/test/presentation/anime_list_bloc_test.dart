@@ -129,8 +129,11 @@ void main() {
     act: (bloc) {
       bloc.add(Search('query'));
     },
+    seed: () => const AnimeListState(
+      list: [anime1, anime2],
+    ),
     expect: () => [
-      const AnimeListState(searchQuery: 'query'),
+      const AnimeListState(searchQuery: 'query', list: []),
     ],
   );
 }

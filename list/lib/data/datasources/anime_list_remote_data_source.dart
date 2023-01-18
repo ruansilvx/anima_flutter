@@ -17,7 +17,7 @@ class AnimeListRemoteDataSource {
       queryParameters: {
         if (page != null) 'page': page,
         if (limit != null) 'limit': limit,
-        if (searchQuery != null) 'searchQuery': searchQuery,
+        if (searchQuery != null) 'search': searchQuery,
       },
     );
     final list = (response.data as List).map((jsonList) {

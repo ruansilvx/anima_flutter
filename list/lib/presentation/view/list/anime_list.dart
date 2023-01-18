@@ -54,13 +54,19 @@ class _AnimeListState extends State<AnimeList> {
             ),
           ),
         ),
-        const AnimeListAppBar(),
+        AnimeListAppBar(
+          handleSearchQuery: (query) {
+            context.read<AnimeListBloc>().add(Search(query));
+            _pagingController.refresh();
+          },
+        ),
       ],
     );
   }
 
   @override
   void dispose() {
+    _pagingController.dispose();
     _animeListBlocStateSubscription.cancel();
     super.dispose();
   }

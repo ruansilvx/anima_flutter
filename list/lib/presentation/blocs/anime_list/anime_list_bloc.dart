@@ -33,6 +33,6 @@ class AnimeListBloc extends Bloc<AnimeListEvent, AnimeListState> {
   }
 
   void _onSearch(Search event, Emitter<AnimeListState> emit) {
-    emit(state.copyWith(searchQuery: event.searchQuery));
+    emit(state.copyWith(searchQuery: event.searchQuery, list: []));
   }
 }
