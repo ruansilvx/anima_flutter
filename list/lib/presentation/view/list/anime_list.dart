@@ -7,6 +7,7 @@ import 'package:list/presentation/anime_list_app_bar.dart';
 import 'package:list/presentation/blocs/anime_list/anime_list_bloc.dart';
 import 'package:list/presentation/blocs/anime_list/anime_list_event.dart';
 import 'package:list/presentation/view/list/anime_list_item.dart';
+import 'package:list/presentation/view/list/anime_list_item_loading.dart';
 import 'package:shared_dependencies/shared_dependencies.dart';
 
 class AnimeList extends StatefulWidget {
@@ -51,11 +52,23 @@ class _AnimeListState extends State<AnimeList> {
         Flexible(
           child: PagedListView<int, Anime>(
             pagingController: _pagingController,
-            builderDelegate: PagedChildBuilderDelegate(
-              itemBuilder: (context, item, index) {
-                return AnimeListItem(anime: item);
-              },
-            ),
+            builderDelegate:
+                PagedChildBuilderDelegate(itemBuilder: (context, item, index) {
+              return AnimeListItem(anime: item);
+            }, newPageProgressIndicatorBuilder: (context) {
+              return const AnimeListItemLoading();
+            }, firstPageProgressIndicatorBuilder: (context) {
+              return SizedBox(
+                height: 500,
+                child: Column(
+                  children: const [
+                    AnimeListItemLoading(),
+                    AnimeListItemLoading(),
+                    AnimeListItemLoading(),
+                  ],
+                ),
+              );
+            }),
           ),
         ),
         AnimeListAppBar(
