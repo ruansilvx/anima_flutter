@@ -1,6 +1,6 @@
-import 'package:anima_flutter/service_locator.dart';
+import 'package:anima_flutter/src/service_locator.dart';
 import 'package:flutter/material.dart';
-import 'package:list/presentation/anime_list_screen.dart';
+import 'package:list/list.dart';
 
 void main() {
   initDependencies();

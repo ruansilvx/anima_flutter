@@ -3,14 +3,16 @@
 // ignore_for_file: no_leading_underscores_for_library_prefixes
 import 'dart:async' as _i2;
 
+import 'package:dio/dio.dart' as _i4;
 import 'package:injectable/injectable.dart' as _i1;
-import 'package:list/data/datasources/anime_list_remote_data_source.dart'
+import 'package:list/src/data/datasources/anime_list_remote_data_source.dart'
     as _i3;
-import 'package:list/data/repositories/anime_list_repository_impl.dart' as _i6;
-import 'package:list/domain/repositories/anime_list_repository.dart' as _i5;
-import 'package:list/domain/usecases/get_anime_list_use_case.dart' as _i7;
-import 'package:list/presentation/blocs/anime_list/anime_list_bloc.dart' as _i8;
-import 'package:shared_dependencies/shared_dependencies.dart' as _i4;
+import 'package:list/src/data/repositories/anime_list_repository_impl.dart'
+    as _i6;
+import 'package:list/src/domain/repositories/anime_list_repository.dart' as _i5;
+import 'package:list/src/domain/usecases/get_anime_list_use_case.dart' as _i7;
+import 'package:list/src/presentation/blocs/anime_list/anime_list_bloc.dart'
+    as _i8;
 
 /// ignore_for_file: unnecessary_lambdas
 /// ignore_for_file: lines_longer_than_80_chars

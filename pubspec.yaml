@@ -12,8 +12,18 @@ dependencies:
   flutter:
     sdk: flutter
 
-  cupertino_icons: ^1.0.2
+  cupertino_icons: any
 
+  # Dependencies solved by shared_dependencies module
+  provider: any
+  get_it: any
+  injectable: any
+  json_annotation: any
+  dio: any
+  pretty_dio_logger: any
+  meta: any
+
+  # Local Modules
   shared_dependencies:
     path: shared_dependencies
 

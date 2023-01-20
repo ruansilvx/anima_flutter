@@ -1,13 +1,13 @@
 import 'package:flutter_test/flutter_test.dart';
-import 'package:list/data/datasources/anime_list_remote_data_source.dart';
-import 'package:list/data/mappers/anime_list_data_mappers.dart';
-import 'package:list/data/models/anime_model.dart';
-import 'package:list/data/models/anime_season_model.dart';
-import 'package:list/data/repositories/anime_list_repository_impl.dart';
-import 'package:list/domain/entities/anime.dart';
-import 'package:list/domain/entities/anime_season.dart';
-import 'package:list/domain/exceptions/exceptions.dart';
-import 'package:shared_dependencies/shared_dependencies.dart';
+import 'package:list/src/data/datasources/anime_list_remote_data_source.dart';
+import 'package:list/src/data/mappers/anime_list_data_mappers.dart';
+import 'package:list/src/data/models/anime_model.dart';
+import 'package:list/src/data/models/anime_season_model.dart';
+import 'package:list/src/data/repositories/anime_list_repository_impl.dart';
+import 'package:list/src/domain/entities/anime.dart';
+import 'package:list/src/domain/entities/anime_season.dart';
+import 'package:list/src/domain/exceptions/exceptions.dart';
+import 'package:mocktail/mocktail.dart';
 
 class MockAnimeListRemoteDataSource extends Mock
     implements AnimeListRemoteDataSource {}
