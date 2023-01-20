@@ -12,12 +12,29 @@ dependencies:
   flutter:
     sdk: flutter
 
-  cupertino_icons: ^1.0.2
+  cupertino_icons: any
 
+  # Dependencies solved by shared_dependencies module
+  provider: any
+  flutter_bloc: any
+  get_it: any
+  injectable: any
+  freezed_annotation: any
+  json_annotation: any
+  dio: any
+  pretty_dio_logger: any
+  mocktail: any
+  bloc_test: any
+  stream_transform: any
+  shimmer: any
+  meta: any
+
+  # Module's own dependencies
+  infinite_scroll_pagination: ^3.2.0
+
+  # Local modules
   shared_dependencies:
     path: ../shared_dependencies
-
-  infinite_scroll_pagination: ^3.2.0
 
 dev_dependencies:
   flutter_test:

@@ -1,11 +1,12 @@
+import 'package:bloc_test/bloc_test.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:list/domain/entities/anime.dart';
-import 'package:list/domain/entities/anime_season.dart';
-import 'package:list/domain/usecases/get_anime_list_use_case.dart';
-import 'package:list/presentation/blocs/anime_list/anime_list_bloc.dart';
-import 'package:list/presentation/blocs/anime_list/anime_list_event.dart';
-import 'package:list/presentation/blocs/anime_list/anime_list_state.dart';
-import 'package:shared_dependencies/shared_dependencies.dart';
+import 'package:list/src/domain/entities/anime.dart';
+import 'package:list/src/domain/entities/anime_season.dart';
+import 'package:list/src/domain/usecases/get_anime_list_use_case.dart';
+import 'package:list/src/presentation/blocs/anime_list/anime_list_bloc.dart';
+import 'package:list/src/presentation/blocs/anime_list/anime_list_event.dart';
+import 'package:list/src/presentation/blocs/anime_list/anime_list_state.dart';
+import 'package:mocktail/mocktail.dart';
 
 class MockGetAnimeListUseCase extends Mock implements GetAnimeListUseCase {}
 
