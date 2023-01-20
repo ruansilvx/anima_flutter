@@ -9,10 +9,10 @@ class AnimeListItemLoading extends StatelessWidget {
     return LayoutBuilder(builder: (context, constraints) {
       return Container(
         padding: const EdgeInsets.all(8),
-        color: Theme.of(context).backgroundColor,
+        color: Theme.of(context).cardColor,
         child: Shimmer.fromColors(
           baseColor: Colors.grey.withOpacity(0.6),
-          highlightColor: Theme.of(context).backgroundColor,
+          highlightColor: Theme.of(context).cardColor,
           child: Row(
             children: [
               Container(
