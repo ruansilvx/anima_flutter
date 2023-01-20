@@ -32,6 +32,7 @@ class AnimeListItem extends StatelessWidget {
             child: Stack(
               children: [
                 Image.network(
+                  width: double.infinity,
                   height: double.infinity,
                   anime.picture,
                   fit: BoxFit.fill,
