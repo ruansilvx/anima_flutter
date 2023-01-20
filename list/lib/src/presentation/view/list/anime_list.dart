@@ -74,7 +74,6 @@ class _AnimeListState extends State<AnimeList> {
         AnimeListAppBar(
           handleSearchQuery: (query) {
             context.read<AnimeListBloc>().add(Search(query));
-            _pagingController.refresh();
           },
         ),
       ],
