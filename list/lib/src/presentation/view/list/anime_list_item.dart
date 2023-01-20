@@ -15,7 +15,7 @@ class AnimeListItem extends StatelessWidget {
         color: Colors.grey,
         gradient: LinearGradient(
           colors: [
-            Colors.white,
+            Theme.of(context).cardColor,
             _seasonColor(anime.season.season),
           ],
         ),
