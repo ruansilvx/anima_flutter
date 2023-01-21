@@ -3,10 +3,10 @@ import 'package:details/src/domain/repositories/anime_details_repository.dart';
 import 'package:injectable/injectable.dart';
 
 @injectable
-class GetAnime {
+class GetAnimeUseCase {
   final AnimeDetailsRepository _animeDetailsRepository;
 
-  GetAnime(this._animeDetailsRepository);
+  GetAnimeUseCase(this._animeDetailsRepository);
 
   Future<Anime> call(String animeId) {
     return _animeDetailsRepository.getAnime(animeId);
