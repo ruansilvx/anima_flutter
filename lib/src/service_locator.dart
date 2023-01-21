@@ -7,4 +7,4 @@ import 'package:meta/meta.dart';
 final getIt = GetIt.instance;
 
 @InjectableInit()
-void initDependencies() => getIt.init();
+void initServiceLocator() => getIt.init();

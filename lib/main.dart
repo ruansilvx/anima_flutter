@@ -3,14 +3,13 @@ import 'package:flutter/material.dart';
 import 'package:list/list.dart';
 
 void main() {
-  initDependencies();
-  runApp(const MyApp());
+  initServiceLocator();
+  runApp(const AnimaApp());
 }
 
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+class AnimaApp extends StatelessWidget {
+  const AnimaApp({super.key});
 
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
