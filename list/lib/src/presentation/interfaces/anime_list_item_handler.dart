@@ -1,3 +1,3 @@
 abstract class AnimeListItemHandler {
-  void handleTap(String animeId) {}
+  void Function(String itemId) get tapHandler;
 }

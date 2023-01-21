@@ -22,7 +22,7 @@ class _AnimeListState extends State<AnimeList> {
   final PagingController<int, Anime> _pagingController =
       PagingController(firstPageKey: 1);
   late StreamSubscription _animeListBlocStateSubscription;
-  late final AnimeListItemHandler? itemHandler =
+  late AnimeListItemHandler? itemHandler =
       context.read<AnimeListItemHandler?>();
 
   @override
@@ -61,9 +61,9 @@ class _AnimeListState extends State<AnimeList> {
               index,
             ) {
               return InkWell(
-                onTap: itemHandler != null
-                    ? () => itemHandler!.handleTap(item.id)
-                    : null,
+                onTap: itemHandler == null
+                    ? null
+                    : () => itemHandler!.tapHandler(item.id),
                 child: AnimeListItem(anime: item),
               );
             }, newPageProgressIndicatorBuilder: (context) {
