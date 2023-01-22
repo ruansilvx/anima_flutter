@@ -14,7 +14,7 @@ class AnimeDetailsScreen extends StatelessWidget {
     return BlocProvider<AnimeDetailsCubit>(
       create: (_) => getIt<AnimeDetailsCubit>(),
       child: Scaffold(
-        body: AnimeDetails(animeId: animeId),
+        body: SafeArea(child: AnimeDetails(animeId: animeId)),
       ),
     );
   }

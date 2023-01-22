@@ -29,6 +29,9 @@ dependencies:
   shimmer: any
   meta: any
 
+  # Module's own dependencies
+  extended_wrap: ^0.1.5
+
   # Local modules
   shared_dependencies:
     path: ../shared_dependencies

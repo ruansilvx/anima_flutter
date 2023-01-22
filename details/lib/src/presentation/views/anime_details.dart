@@ -1,5 +1,7 @@
 import 'package:details/src/presentation/blocs/anime_details_cubit.dart';
 import 'package:details/src/presentation/blocs/anime_details_state.dart';
+import 'package:details/src/presentation/views/widgets/anime_details_content.dart';
+import 'package:details/src/presentation/views/widgets/anime_details_loading.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -23,8 +25,14 @@ class _AnimeDetailsState extends State<AnimeDetails> {
   Widget build(BuildContext context) {
     return BlocBuilder<AnimeDetailsCubit, AnimeDetailsState>(
       builder: (context, state) {
-        if(state.status != AnimeDetailsStatus.success) return Container();
-        return Center(child: Text(state.anime!.title),);
+        switch (state.status) {
+          case AnimeDetailsStatus.loading:
+            return const AnimeDetailsLoading();
+          case AnimeDetailsStatus.error:
+            return Container();
+          case AnimeDetailsStatus.success:
+            return AnimeDetailsContent(anime: state.anime!);
+        }
       },
     );
   }
