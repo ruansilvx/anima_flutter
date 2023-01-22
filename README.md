@@ -7,7 +7,7 @@ A simple playground flutter app that consumes the [anima api](https://github.com
 ## TODO
 
 - [ ] Improve all module's README
-- [ ] Implement simple CI/CD pipe to at leat run the tests
+- [ ] Implement simple CI/CD pipe to at least run the tests
 - [ ] Add string internationalization
 - [ ] Add favorite feature using local storage (probably Hive)
 - [ ] Add some sort of authentication
