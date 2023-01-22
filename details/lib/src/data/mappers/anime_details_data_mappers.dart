@@ -5,7 +5,6 @@ import 'package:details/src/domain/entities/anime_season.dart';
 
 extension AnimeModelRemoteToDomainMappers on AnimeModel {
   Anime toDomain() => Anime(
-        id: id,
         title: title,
         status: AnimeStatus.values.byName(status.toLowerCase()),
         type: AnimeType.values.byName(type.toLowerCase()),

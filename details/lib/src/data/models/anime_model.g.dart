@@ -7,7 +7,6 @@ part of 'anime_model.dart';
 // **************************************************************************
 
 AnimeModel _$AnimeModelFromJson(Map<String, dynamic> json) => AnimeModel(
-      id: json['id'] as String,
       title: json['title'] as String,
       type: json['type'] as String,
       status: json['status'] as String,
@@ -21,7 +20,6 @@ AnimeModel _$AnimeModelFromJson(Map<String, dynamic> json) => AnimeModel(
 
 Map<String, dynamic> _$AnimeModelToJson(AnimeModel instance) =>
     <String, dynamic>{
-      'id': instance.id,
       'title': instance.title,
       'type': instance.type,
       'status': instance.status,

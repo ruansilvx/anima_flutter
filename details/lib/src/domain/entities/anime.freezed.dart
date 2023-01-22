@@ -16,7 +16,6 @@ final _privateConstructorUsedError = UnsupportedError(
 
 /// @nodoc
 mixin _$Anime {
-  String get id => throw _privateConstructorUsedError;
   String get title => throw _privateConstructorUsedError;
   AnimeType get type => throw _privateConstructorUsedError;
   AnimeStatus get status => throw _privateConstructorUsedError;
@@ -35,8 +34,7 @@ abstract class $AnimeCopyWith<$Res> {
       _$AnimeCopyWithImpl<$Res, Anime>;
   @useResult
   $Res call(
-      {String id,
-      String title,
+      {String title,
       AnimeType type,
       AnimeStatus status,
       String picture,
@@ -60,7 +58,6 @@ class _$AnimeCopyWithImpl<$Res, $Val extends Anime>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? id = null,
     Object? title = null,
     Object? type = null,
     Object? status = null,
@@ -70,10 +67,6 @@ class _$AnimeCopyWithImpl<$Res, $Val extends Anime>
     Object? tags = null,
   }) {
     return _then(_value.copyWith(
-      id: null == id
-          ? _value.id
-          : id // ignore: cast_nullable_to_non_nullable
-              as String,
       title: null == title
           ? _value.title
           : title // ignore: cast_nullable_to_non_nullable
@@ -121,8 +114,7 @@ abstract class _$$_AnimeCopyWith<$Res> implements $AnimeCopyWith<$Res> {
   @override
   @useResult
   $Res call(
-      {String id,
-      String title,
+      {String title,
       AnimeType type,
       AnimeStatus status,
       String picture,
@@ -143,7 +135,6 @@ class __$$_AnimeCopyWithImpl<$Res> extends _$AnimeCopyWithImpl<$Res, _$_Anime>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? id = null,
     Object? title = null,
     Object? type = null,
     Object? status = null,
@@ -153,10 +144,6 @@ class __$$_AnimeCopyWithImpl<$Res> extends _$AnimeCopyWithImpl<$Res, _$_Anime>
     Object? tags = null,
   }) {
     return _then(_$_Anime(
-      id: null == id
-          ? _value.id
-          : id // ignore: cast_nullable_to_non_nullable
-              as String,
       title: null == title
           ? _value.title
           : title // ignore: cast_nullable_to_non_nullable
@@ -193,8 +180,7 @@ class __$$_AnimeCopyWithImpl<$Res> extends _$AnimeCopyWithImpl<$Res, _$_Anime>
 
 class _$_Anime with DiagnosticableTreeMixin implements _Anime {
   const _$_Anime(
-      {required this.id,
-      required this.title,
+      {required this.title,
       required this.type,
       required this.status,
       required this.picture,
@@ -204,8 +190,6 @@ class _$_Anime with DiagnosticableTreeMixin implements _Anime {
       : _relations = relations,
         _tags = tags;
 
-  @override
-  final String id;
   @override
   final String title;
   @override
@@ -232,7 +216,7 @@ class _$_Anime with DiagnosticableTreeMixin implements _Anime {
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'Anime(id: $id, title: $title, type: $type, status: $status, picture: $picture, season: $season, relations: $relations, tags: $tags)';
+    return 'Anime(title: $title, type: $type, status: $status, picture: $picture, season: $season, relations: $relations, tags: $tags)';
   }
 
   @override
@@ -240,7 +224,6 @@ class _$_Anime with DiagnosticableTreeMixin implements _Anime {
     super.debugFillProperties(properties);
     properties
       ..add(DiagnosticsProperty('type', 'Anime'))
-      ..add(DiagnosticsProperty('id', id))
       ..add(DiagnosticsProperty('title', title))
       ..add(DiagnosticsProperty('type', type))
       ..add(DiagnosticsProperty('status', status))
@@ -255,7 +238,6 @@ class _$_Anime with DiagnosticableTreeMixin implements _Anime {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_Anime &&
-            (identical(other.id, id) || other.id == id) &&
             (identical(other.title, title) || other.title == title) &&
             (identical(other.type, type) || other.type == type) &&
             (identical(other.status, status) || other.status == status) &&
@@ -269,7 +251,6 @@ class _$_Anime with DiagnosticableTreeMixin implements _Anime {
   @override
   int get hashCode => Object.hash(
       runtimeType,
-      id,
       title,
       type,
       status,
@@ -287,8 +268,7 @@ class _$_Anime with DiagnosticableTreeMixin implements _Anime {
 
 abstract class _Anime implements Anime {
   const factory _Anime(
-      {required final String id,
-      required final String title,
+      {required final String title,
       required final AnimeType type,
       required final AnimeStatus status,
       required final String picture,
@@ -296,8 +276,6 @@ abstract class _Anime implements Anime {
       required final List<String> relations,
       required final List<String> tags}) = _$_Anime;
 
-  @override
-  String get id;
   @override
   String get title;
   @override

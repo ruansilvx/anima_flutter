@@ -7,7 +7,6 @@ part 'anime.freezed.dart';
 @freezed
 class Anime with _$Anime {
   const factory Anime({
-    required String id,
     required String title,
     required AnimeType type,
     required AnimeStatus status,
