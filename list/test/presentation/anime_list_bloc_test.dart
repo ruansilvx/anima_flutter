@@ -49,14 +49,17 @@ void main() {
       when(
         () => getAnimeListUseCase(
           page: any(named: 'page'),
+          limit: any(named: 'limit'),
+          searchQuery: any(named: 'searchQuery'),
         ),
       ).thenAnswer((_) async => [anime2]);
       return animeListBloc;
     },
     seed: () {
       return const AnimeListState(
-        nextPage: 1,
+        nextPage: 2,
         list: [anime1],
+        limit: 1,
       );
     },
     act: (bloc) {
@@ -66,6 +69,7 @@ void main() {
       const AnimeListState(
         nextPage: 3,
         list: [anime1, anime2],
+        limit: 1,
       ),
     ],
   );
@@ -76,6 +80,8 @@ void main() {
       when(
         () => getAnimeListUseCase(
           page: any(named: 'page'),
+          limit: any(named: 'limit'),
+          searchQuery: any(named: 'searchQuery'),
         ),
       ).thenThrow(Exception());
       return animeListBloc;
@@ -83,6 +89,7 @@ void main() {
     seed: () {
       return const AnimeListState(
         nextPage: 1,
+        limit: 1,
         list: [anime1],
       );
     },
@@ -90,7 +97,7 @@ void main() {
       bloc.add(FetchPage(page: 2));
     },
     expect: () => [
-      const AnimeListState(nextPage: 1, list: [anime1], error: true),
+      const AnimeListState(nextPage: 1, limit: 1, list: [anime1], error: true),
     ],
   );
 
@@ -101,6 +108,7 @@ void main() {
         () => getAnimeListUseCase(
           page: any(named: 'page'),
           limit: any(named: 'limit'),
+          searchQuery: any(named: 'searchQuery'),
         ),
       ).thenAnswer((_) async => [anime3]);
       return animeListBloc;
@@ -133,8 +141,9 @@ void main() {
     seed: () => const AnimeListState(
       list: [anime1, anime2],
     ),
+    wait: const Duration(milliseconds: 300),
     expect: () => [
-      const AnimeListState(searchQuery: 'query', list: []),
+      const AnimeListState(searchQuery: 'query', list: null, nextPage: null),
     ],
   );
 }

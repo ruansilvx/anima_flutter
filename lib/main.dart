@@ -1,24 +1,22 @@
+import 'package:anima_flutter/src/router_config.dart';
 import 'package:anima_flutter/src/service_locator.dart';
 import 'package:flutter/material.dart';
-import 'package:list/list.dart';
 
 void main() {
-  initDependencies();
-  runApp(const MyApp());
+  initServiceLocator();
+  runApp(const AnimaApp());
 }
 
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+class AnimaApp extends StatelessWidget {
+  const AnimaApp({super.key});
 
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return MaterialApp.router(
       title: 'Anima',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
-      home: const AnimeListScreen(),
+      darkTheme: ThemeData.dark(useMaterial3: true),
+      theme: ThemeData.light(useMaterial3: true),
+      routerConfig: routerConfig,
     );
   }
 }

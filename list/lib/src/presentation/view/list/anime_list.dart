@@ -6,6 +6,7 @@ import 'package:list/src/domain/entities/anime.dart';
 import 'package:list/src/presentation/anime_list_app_bar.dart';
 import 'package:list/src/presentation/blocs/anime_list/anime_list_bloc.dart';
 import 'package:list/src/presentation/blocs/anime_list/anime_list_event.dart';
+import 'package:list/src/presentation/interfaces/anime_list_item_handler.dart';
 import 'package:list/src/presentation/view/list/anime_list_item.dart';
 import 'package:list/src/presentation/view/list/anime_list_item_loading.dart';
 import 'package:provider/provider.dart';
@@ -21,6 +22,8 @@ class _AnimeListState extends State<AnimeList> {
   final PagingController<int, Anime> _pagingController =
       PagingController(firstPageKey: 1);
   late StreamSubscription _animeListBlocStateSubscription;
+  late AnimeListItemHandler? itemHandler =
+      context.read<AnimeListItemHandler?>();
 
   @override
   void initState() {
@@ -52,9 +55,17 @@ class _AnimeListState extends State<AnimeList> {
         Flexible(
           child: PagedListView<int, Anime>(
             pagingController: _pagingController,
-            builderDelegate:
-                PagedChildBuilderDelegate(itemBuilder: (context, item, index) {
-              return AnimeListItem(anime: item);
+            builderDelegate: PagedChildBuilderDelegate(itemBuilder: (
+              context,
+              item,
+              index,
+            ) {
+              return InkWell(
+                onTap: itemHandler == null
+                    ? null
+                    : () => itemHandler!.tapHandler(item.id),
+                child: AnimeListItem(anime: item),
+              );
             }, newPageProgressIndicatorBuilder: (context) {
               return const AnimeListItemLoading();
             }, firstPageProgressIndicatorBuilder: (context) {
@@ -74,7 +85,6 @@ class _AnimeListState extends State<AnimeList> {
         AnimeListAppBar(
           handleSearchQuery: (query) {
             context.read<AnimeListBloc>().add(Search(query));
-            _pagingController.refresh();
           },
         ),
       ],
