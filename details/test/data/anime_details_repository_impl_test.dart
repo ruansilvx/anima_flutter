@@ -22,7 +22,6 @@ void main() {
   });
 
   final anime = AnimeModel(
-    id: 'id',
     title: 'title',
     type: AnimeType.unknown.name,
     picture: 'thumbnail',

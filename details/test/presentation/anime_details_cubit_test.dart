@@ -14,7 +14,6 @@ void main() {
   late AnimeDetailsCubit animeDetailsCubit;
 
   const anime = Anime(
-    id: 'id',
     title: 'title',
     type: AnimeType.unknown,
     picture: 'thumbnail',
