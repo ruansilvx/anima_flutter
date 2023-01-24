@@ -1,16 +1,7 @@
-# details
+# Anime Flutter feature: Details
 
-A new Flutter project.
+A module that holds the **DETAILS** feature from the [Anima Flutter](https://github.com/ruansilvx/anima_flutter) project. It shows more info from elements found at the list feature.
 
-## Getting Started
-
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## Dependencies
+ - This module consumes the [Anima API](https://github.com/ruansilvx/anima-api).
+ - This module depends on the [Shared Dependencies](../shared_dependencies/) module to solve its dependencies constraints.
