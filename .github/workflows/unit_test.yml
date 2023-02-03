@@ -1,0 +1,35 @@
+name: Tests
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+
+permissions: read-all
+
+jobs:
+  unit-test:
+    name: Unit tests on ${{ matrix.os }}
+    runs-on: Unit tests on ${{ matrix.os }}
+    strategy:
+      matrix:
+        os: [ ubuntu-latest, windows-latest, macos-latest ]
+    steps:
+      # Set up Flutter
+      - name: Clone Flutter repository with master channel
+        uses: subosito/flutter-action@v2.8.0
+        with:
+          channel: master
+      - run: flutter doctor -v
+
+      # Checkout anima flutter code and get packages
+      - name: Checkout Anima Flutter code
+        uses: actions/checkout@v3.3.0
+      - run: flutter pub get
+
+      # Analyze, check formatting and run unit tests
+      - run: flutter analyze
+      - name: Run code analyzer
+        run: flutter format --set-exist-if-changed --dry-run .
+      - name: Run unit Tests
+        run: flutter test
