@@ -32,4 +32,4 @@ jobs:
       - name: Run code analyzer
         run: flutter format --set-exist-if-changed --dry-run .
       - name: Run unit Tests
-        run: flutter test
+        run: chmod 755 scripts/unit_tests.sh && ./scripts/unit_tests.sh
